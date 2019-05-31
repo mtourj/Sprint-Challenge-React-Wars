@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import Character from "./components/Character";
+import PageSelect from "./components/PageSelect";
 import "./App.css";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      starwarsChars: []
-    };
-  }
+  state = {
+    starwarsChars: [],
+    currentPage: 0,
+    resPerPage: 5
+  };
 
   componentDidMount() {
     this.getCharacters("https://swapi.co/api/people/");
@@ -30,13 +30,30 @@ class App extends Component {
       });
   };
 
+  advancePage = modifier => {
+    this.setState({currentPage: this.state.currentPage + modifier});
+  }
+
   render() {
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
-        {this.state.starwarsChars.map(character => (
-          <Character character={character} key={character.name} />
-        ))}
+        <div className="char-list">
+          {this.state.starwarsChars.map((character, index) => {
+            if(index >= (this.state.resPerPage * this.state.currentPage) + this.state.resPerPage)
+              return;
+            if(index < this.state.resPerPage * this.state.currentPage)
+              return;
+            
+            return <Character character={character} key={character.name} />
+          })}
+          <PageSelect
+            advancePage={this.advancePage}
+            length={this.state.starwarsChars.length}
+            curPage={this.state.page}
+            resPerPage={this.state.resPerPage}
+          />
+        </div>
       </div>
     );
   }
