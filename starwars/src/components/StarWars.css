@@ -1,0 +1,21 @@
+.character {
+  background: rgb(255, 251, 219);
+  width: 40%;
+  margin: 1rem auto;
+  min-width: 320px;
+  display: flex;
+  padding: 1.5rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  border-radius: 20px;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+}
+
+.panel {
+  width: 49%;
+}
