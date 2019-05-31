@@ -19,3 +19,42 @@
 .panel {
   width: 49%;
 }
+
+.page-select {
+  background: white;
+  width: 50%;
+  border-radius: 10px;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  align-items: center;
+}
+
+section input {
+  height: 24px;
+}
+
+.page-select button {
+  border: none;
+  color: white;
+  background: cadetblue;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0.6rem;
+
+  transition: background 0.2s ease-in-out;
+}
+
+.page-select button:hover {
+  background: cyan;
+  
+}

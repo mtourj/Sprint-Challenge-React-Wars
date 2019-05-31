@@ -34,11 +34,22 @@ class App extends Component {
     this.setState({currentPage: this.state.currentPage + modifier});
   }
 
+  setResPerPage = async event => {
+    await this.setState({resPerPage: parseInt(event.target.value)})
+  }
+
   render() {
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
         <div className="char-list">
+        <PageSelect
+            advancePage={this.advancePage}
+            length={this.state.starwarsChars.length}
+            curPage={this.state.currentPage}
+            resPerPage={this.state.resPerPage}
+            setResPerPage={this.setResPerPage}
+          />
           {this.state.starwarsChars.map((character, index) => {
             if(index >= (this.state.resPerPage * this.state.currentPage) + this.state.resPerPage)
               return;
@@ -47,12 +58,6 @@ class App extends Component {
             
             return <Character character={character} key={character.name} />
           })}
-          <PageSelect
-            advancePage={this.advancePage}
-            length={this.state.starwarsChars.length}
-            curPage={this.state.page}
-            resPerPage={this.state.resPerPage}
-          />
         </div>
       </div>
     );
