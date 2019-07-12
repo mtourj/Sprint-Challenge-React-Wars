@@ -4,5 +4,28 @@
 .Header {
   color: #443e3e;
   text-shadow: 1px 1px 5px #fff;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 16px;
 }
+
+.people {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.person {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 8px;
+  width: 420px;
+  border-radius: 7px;
+  margin: 4px;
+}
+
+.page-select {
+  margin-top: 12px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
 /* write your parent styles in here for your App.js */
