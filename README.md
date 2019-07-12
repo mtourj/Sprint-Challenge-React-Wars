@@ -26,11 +26,19 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+	ReactJS is a JavaScript library used to render UI, and it solves the problem of making complicated applications scalable.
+
 - [ ] What does it mean to _think_ in react?
+
+	It means to think in in components and stateful vs. stateless components.
 
 - [ ] Describe state.
 
+	State is the information stored about a specific component.
+
 - [ ] Describe props.
+
+	Props are the properties that are passed to a component.
 
 ## Project Set Up
 
